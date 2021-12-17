@@ -46,7 +46,7 @@ This command will run the user interface, which will show the menu. In this menu
 -if you press 'r'(or 'R') the robot will return to its initial position with speeds equal to 0;
 -if you press 'q'(or 'Q') you will close the server node;
 
-### Faster Running ###
+### Running with Launch File ###
 
 A faster way to start the developed program is to run it with the [.launch file](https://github.com/stefanomolinari123/second_assignment/blob/main/launch/launch.launch), which can start the three cpp files. This file holds the circuit, and it allows it to communicate with the ros master.
 To run this launch file, you need to type the following command on the terminal:
@@ -86,7 +86,7 @@ After this, the data will be published to the /cmd_vel topic by the controller n
 [Server Node](https://github.com/stefanomolinari123/second_assignment/blob/main/src/server.cpp)
 ----------------------
 
-The server node control and modify the speed of the robot, following the input received by the user in the user_interface node. This node, indeed, received the input inserted in the user_interface node, and thanks to a switch function, which checks if the input is correct, the robot's speed can be increased or decreased. Furthermore, the position of the robot and its speed can be resetted, thanks to the /reset_position service. This node can also be closed when the referring command is pressed.
+The server node control and modify the speed of the robot, following the input received by the user in the user_interface node. This node, indeed, received the input inserted in the user_interface node, and thanks to a switch function, the robot's speed can be increased or decreased (always in the range defined in the user_interface node). Furthermore, the position of the robot and its speed can be resetted, thanks to the /reset_position service. This node can also be closed when the referring command ('q') is pressed.
 
 [User Interface Node](https://github.com/stefanomolinari123/second_assignment/blob/main/src/user_interface.cpp)
 ----------------------
@@ -101,8 +101,9 @@ Below there is the graph of this project shown:
 
 ![rosgraph](https://user-images.githubusercontent.com/62506638/146358604-6cd983ab-303d-41bd-af60-e9450ca25376.png)
 
-Future Improvements
+Conclusion Future Improvements
 ----------------------
 
 In certain situation, it is possible to see that the driving of the robot is not so fluent, like a zig-zag drives, since the turning method used is not optimal. Besides, the speed of the robot cannot be increased more than a certain level, because if it would be possible, the robot could crash against the walls. This problem could be eliminated with the use of more controls.
+
 Indeed, in this project the speed of the robot is limited from 0 to 4, and if you try to increase the speed after the robot has reached the maximum value, this won’t change. When the robot is stopped you can't decrease its speed, otherwise it will go backward. The maximum value of the speed is set at 4, because if it goes over this value there could be the possibility that it would not be able to avoid some walls and if not, it would crash against them.
