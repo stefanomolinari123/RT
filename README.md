@@ -41,10 +41,11 @@ This command will run the service node, that will allow the user to increase or 
 $ rosrun second_assignment user_interface_node
 ```
 This command will run the user interface, which will show the menu. In this menu there are four choices:
--if you press 'a'(or 'A') the robot will increase its speed;
--if you press 'd'(or 'D') the robot will decrease its speed;
--if you press 'r'(or 'R') the robot will return to its initial position with speeds equal to 0;
--if you press 'q'(or 'Q') you will close the server node;
+
+- if you press 'a'(or 'A') the robot will increase its speed;
+- if you press 'd'(or 'D') the robot will decrease its speed;
+- if you press 'r'(or 'R') the robot will return to its initial position with speeds equal to 0;
+- if you press 'q'(or 'Q') you will close the server node;
 
 ### Running with Launch File ###
 
@@ -101,7 +102,7 @@ Below there is the graph of this project shown:
 
 ![rosgraph](https://user-images.githubusercontent.com/62506638/146358604-6cd983ab-303d-41bd-af60-e9450ca25376.png)
 
-Conclusion Future Improvements
+Possible Future Improvements
 ----------------------
 
 In certain situation, it is possible to see that the driving of the robot is not so fluent, like a zig-zag drives, since the turning method used is not optimal. Besides, the speed of the robot cannot be increased more than a certain level, because if it would be possible, the robot could crash against the walls. This problem could be eliminated with the use of more controls.
